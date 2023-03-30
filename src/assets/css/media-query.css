@@ -1,0 +1,35 @@
+@media (max-width: 990px) {
+    .hero-section-container h1 {
+        width: 100%;
+        font-size: 3rem;
+        line-height: 45px;
+    }
+    .pi-img img {
+        width: 350px;
+        display: none;
+    }
+
+    .how-to-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .w-50 {
+        width: 100% !important;
+    }
+
+    .w-50 img {
+        width: 50%;
+    }
+
+    /* APP FOOTER  */
+    .app-footer ul {
+        flex-direction: column;
+    }
+    
+    .menu-item {
+        width: 100%;
+    }
+    
+}

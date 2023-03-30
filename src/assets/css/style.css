@@ -1,0 +1,21 @@
+/* Partials  */
+@import url("./partials.css");
+
+/* Main Styling */
+@import url('./main.css');
+
+/* Navigation Styles  */
+@import url('./nav.css');
+
+/* Compoenents  */
+@import url("./components.css");
+
+/* Auth CSS  */
+@import url("./auth.css");
+
+/* Media Query  */
+@import url("./media-query.css");
+
+/* Animation CSS  */
+@import url("../css/wickedcss.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');

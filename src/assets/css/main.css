@@ -1,0 +1,67 @@
+/* MAIN APP CONTAINER  */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+header {
+    background-size: cover;
+    background-position: left;
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section-container {
+    display: flex;
+    min-height: 500px;
+    align-items: center;  
+    position: relative;  
+}
+
+.pi-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -99;
+}
+
+.hero-section-container h1 {
+    font-family: 'Prompt', serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    width: 50%;
+    line-height: 60px;
+}
+
+.hero-section-container p {
+    color: var(--gray-600);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* HOW TO  */
+.how-to-container {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.how-to-cards{
+   display: grid;
+   display: -ms-grid;
+   display: -moz-grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#tag-line {
+    background: url("../img/div.jpg");
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    place-items: center;
+}
