@@ -239,7 +239,7 @@
         >13. Communication with Us. Hearing from you remains our greatest
         pleasure. All User comments or feedback should be sent to the following
         email address: </span
-      >Support@pi2p.io<span style="color: #202124">
+      > <a href="mail-to:support@pi2p.io">support@pi2p.io</a> <span style="color: #202124">
         This is the only valid and official email address through which the
         Platform communicates with Users. If a User uses any other means of
         communication to contact the Platform, the Platform shall not be obliged
