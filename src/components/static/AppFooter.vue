@@ -23,6 +23,10 @@
           <a target="_blank" href="javascript:void(0)">
             <i class="fa fa-twitter" aria-hidden="true"></i>
           </a>
+          <a target="_blank" href="https://t.me/+NMTckuXEE7lmMTNk">
+            <!-- <i class="fa fa-twitter" aria-hidden="true"></i> -->
+            <i class="fa fa-telegram" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </div>

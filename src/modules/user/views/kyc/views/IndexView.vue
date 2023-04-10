@@ -11,10 +11,10 @@
       <div class="d-lg-flex align-items-center" style="gap: 30px">
         <div class="mb-3 w-100">
           <label for="">Phone Number</label>
-          <input type="tel" v-model="phoneNumber" />
+          <input type="number" v-model="phoneNumber" />
         </div>
         <div class="mb-3 w-100">
-          <label for="">Email</label>
+          <label for="">Email <span class="text-danger small">*(Registered Email)</span> </label>
           <input type="email" v-model="email" />
         </div>
       </div>
