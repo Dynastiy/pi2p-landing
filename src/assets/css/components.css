@@ -11,10 +11,10 @@
     background-color: var(--primary-500);
     border-radius: 8px;
     text-transform: uppercase;
-    padding: 12px 25px;
+    padding: 10px 20px;
     font-weight: 500;
     color: var(--white-50);
-    font-size: 14px;
+    font-size: 12px;
     border: none;
 }
 
@@ -22,23 +22,22 @@
     background-color: var(--tertiary-900);
     border-radius: 8px;
     text-transform: uppercase;
-    padding: 12px 25px;
+    padding: 10px 20px;
     font-weight: 700;
     color: var(--black-500);
-    font-size: 14px;
+    font-size: 12px;
     border: none;
 }
 
 .outline-btn {
     border: 2px solid var(--primary-500);
     background-color: var(--white-50);
-    padding: 12px 25px;
-    font-weight: 600;
-    font-size: 14px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 12px;
     border-radius: 8px;
     text-transform: uppercase;
     color: var(--primary-500);
-    background-color: transparent;
 }
 
 
@@ -188,14 +187,20 @@
     font-size: 20px;
 }
 
-select{
+select, input{
     width: 100%;
-    padding: 13px 10px;
+    padding: 8px 10px;
     font-weight: 400;
     outline: none;
     border: 1px solid var(--gray-400);
     border-radius: 5px;
     background-color: transparent;
+}
+
+form label {
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 /* Filter  */
@@ -237,75 +242,60 @@ select{
 }
 
 /* TABLE  */
-/* .table td,
-.table th {
-    font-size: 14px;
-    vertical-align: middle;
-    font-weight: 500;
-}
-
-.table td {
-    color: var(--gray-800);
-    font-weight: 300;
-    border-bottom: 0.5px solid var(--gray-300);
-}
-
-
-.table tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.06);
-}
-
-.table thead th {
-    border-bottom: none;
-    color: var(--white-50) !important;
-    background-color: var(--primary-500);
-} */
-
-.table td, .table th, .table thead th {
-    border-top: transparent;
-    vertical-align: middle;
-}
-    table {
-        border-collapse: separate;
-        border-spacing: 0 15px;
-        width: 100%;
-      }
-      th {
-        color: white;
-      }
-      th{
-        /* width: 100%; */
-        border: none;
-        /* padding: 5px; */
-        background: var(--primary-500);
-        font-size: 0.8rem;
-        text-align: center;
-      }
-      td {
-        /* width: 100%; */
-        border: none;
-        /* padding: 5px; */
-        background: var(--gray-50);
-        padding: 1rem;
-        font-size: 0.8rem;
-        text-align: center;
-      }
-      th:nth-child(1) {
-        border-radius: 20px 0 0 20px;
-      }
-      th:last-child {
-        border-radius: 0 20px 20px 0;
-      }
-      td:nth-child(1) {
-        border-radius: 20px 0 0 20px;
-      }
-      td:last-child {
-        border-radius: 0 20px 20px 0;
-      }
-      .table thead th {
-        border-bottom: none
-      }
-
+      /* Rwd table */
+      .rwd-table {
+        margin: 1em 0;
+        min-width: 100%;
+    }
+    
+    .rwd-table tr {
+        border-top: 1px solid var(--gray-50);
+        border-bottom: 5px solid var(--gray-50);
+        border-radius: 20px !important;
+    }
+    
+    .rwd-table th {
+        display: none;
+    }
+    
+    .rwd-table td {
+        display: block;
+    }
+    
+    .rwd-table td:first-child {
+        padding-top: .5em;
+    }
+    
+    .rwd-table td:last-child {
+        padding-bottom: .5em;
+    }
+    
+    .rwd-table td:before {
+        content: attr(data-th) " ";
+        font-weight: bold;
+        width: 6.5em;
+        display: inline-block;
+        color: #000;
+    }
+    
+    .rwd-table {
+        background: var(--primary-50);
+        color: var(--gray-800);
+        overflow: hidden;
+    }
+    
+    .rwd-table th,
+    .rwd-table td {
+        margin: .6em 1em;
+        font-size: 13.6px;
+        font-weight: 500;
+    }
+    
+    .rwd-table th,
+    .rwd-table td:before {
+        color: var(--primary-500);
+    }
+    
 
 
 /* GENERALS  */
@@ -333,7 +323,7 @@ h1, h2, h3, h4, h5, h6, ul {
 
 .header-text {
     color: var(--gray-800);
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .header-font {
@@ -461,4 +451,26 @@ h1, h2, h3, h4, h5, h6, ul {
 
 .card p {
     font-size: 13px;
+}
+
+
+/* Dialog */
+.auth .el-dialog__wrapper {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.auth .el-dialog__wrapper .el-dialog {
+    margin-top: 0 !important;
+    margin: unset !important;
+    width: 40% !important;
+    box-shadow: unset !important;
+    border-radius: 10px;
+}
+
+.auth .el-dialog__wrapper .el-dialog .el-dialog__header {
+    display: none;
 }

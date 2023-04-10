@@ -65,3 +65,146 @@ header {
     display: -moz-grid;
     place-items: center;
 }
+
+/* Home  */
+#wallet {
+    background: url("../img/div.jpg");
+    background-color: var(--gray-600);
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    min-height: 220px;
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#wallet h6 {
+    color: var(--primary-50);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#wallet .amount-preview {
+    color: var(--primary-50);
+}
+
+#wallet h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+#wallet .select-currency {
+    background-color: var(--primary-50);
+    color: var(--primary-500);
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+#wallet .currency-dropdown li{
+    list-style: none;
+}
+
+#wallet .wallet-actions {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    gap: 40px;
+}
+
+#wallet .wallet-actions span.label {
+    font-size: 14px;
+}
+
+#wallet .wallet-actions div {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+
+#wallet .wallet-actions div:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+    font-weight: 500;
+}
+
+.home-top {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    gap: 20px;
+}
+
+.home-top .home-actions-component {
+    width: 100%;
+}
+
+.home-top .wallet-component {
+    width: 100%;
+}
+
+.home-action {
+    background-color: var(--primary-50);
+    width: 100%;
+    border-radius: 5px;
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    place-items: center;
+    text-align: center;
+    padding: 8px;
+}
+
+.home-action h6 {
+    font-size: 12px;
+}
+
+.home-action span {
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    background-color: var(--white);
+    place-items: center;
+    width: max-content;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+
+#home-actions {
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+
+
+/* KYC  */
+.kyc {
+    width: 40%;
+    border: 1px solid var(--primary-50);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.kyc h4 {
+    font-weight: 600;
+    text-align: center;
+}
