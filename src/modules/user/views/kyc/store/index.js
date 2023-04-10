@@ -91,7 +91,6 @@ export default {
       try {
         let res = await $request.post(`account/complete-kyc`, payload);
         console.log(res.data);
-        commit("SET_LOADING", false);
         // dispatch("list", payload.page)
         // dispatch("view", payload.id)
         router.push("/kyc-submitted")
@@ -111,6 +110,7 @@ export default {
         return error;
       } finally {
         NProgress.done();
+        commit("SET_LOADING", false);
       }
     },
   },

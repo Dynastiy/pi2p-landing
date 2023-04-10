@@ -21,7 +21,10 @@
 
       <div class="mb-3">
         <label for="">Document Type</label>
-        <input type="text" v-model="document_type" />
+        <select name="" id="" v-model="document_type">
+          <option v-for="item in docs" :key="item.id" :value="item.name">{{ item.name }}</option>
+        </select>
+        <!-- <input type="text" v-model="document_type" /> -->
       </div>
 
       <div class="mb-4">
@@ -50,6 +53,7 @@
 </template>
 
 <script>
+import docs from "@/api/documents"
 import { mapState, mapActions } from "vuex";
 export default {
   data() {
@@ -59,6 +63,7 @@ export default {
       document_type: "",
       document: "",
       email: "",
+      docs,
     };
   },
   methods: {
