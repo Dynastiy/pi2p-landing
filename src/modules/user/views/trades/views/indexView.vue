@@ -1,28 +1,31 @@
 <template>
-    <div class="container">
-        <Trades/>
+  <div class="container">
+    <div>
+        <h4>All Trades</h4>
     </div>
-  </template>
-  
-  <script>
-  import { mapActions } from 'vuex'
-  import HomeActions from '../components/cards/HomeActions.vue'
-  import WalletView from '../components/cards/WalletView.vue'
-  import Trades from '../components/tables/recentAds.vue'
-  
-  export default {
-    components: { WalletView, HomeActions,
-      RecentAds },
-    methods: {
-        ...mapActions('wallet', ['balances', 'sellAds'])
-    },
-    beforeMount(){
-      this.balances()
-      this.sellAds()
-    }
+
+    <div>
+        <trades-table/>
+    </div>
+  </div>
+</template>
+
+<script>
+import TradesTable from '../components/tables/TradesTable.vue'
+import { mapActions } from 'vuex'
+export default {
+components:{
+    TradesTable
+},
+methods: {
+      ...mapActions('trades', ['list'])
+  },
+  beforeMount(){
+    this.list()
   }
-  </script>
-  
-  <style>
-  
-  </style>
+}
+</script>
+
+<style>
+
+</style>

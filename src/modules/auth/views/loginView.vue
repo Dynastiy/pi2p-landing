@@ -6,7 +6,7 @@
         </div>
   
         <div>
-          <h5 class="text-uppercase text-center my-3 font-weight-bold">
+          <h5 class="text-uppercase text-center my-3" style="font-weight: 700;">
             user login
           </h5>
           
@@ -64,7 +64,7 @@
             </div>
 
             <div class="text-center mt-2">
-             <small>Do not have an account? <span role="button" style="color: var(--primary-500)" @click="$emit('goToRegister', 'register')">Register</span></small>
+             <small>Do not have an account? <span role="button" style="color: var(--primary-500); font-weight: 700;" @click="$emit('goToRegister', 'register')">Register</span></small>
             </div>
 
             <div class="text-center mt-2">

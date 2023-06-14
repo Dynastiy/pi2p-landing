@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-   <div class="my-4">
+   <div class="mb-4">
     <HeroSection/>
-    <HowTo/>
+    <HowTo class="mt-5"/>
     <TagLine/>
    </div>
   </div>

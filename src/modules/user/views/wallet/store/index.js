@@ -2,6 +2,7 @@
 
 import $request from "@/axios";
 import toastify from "toastify-js";
+import router from "@/router";
 
 const getDefaultState = () => {
   return {
@@ -114,45 +115,13 @@ export default {
       }
     },
 
-     // List Balances
-     async sellAds({ commit }) {
-        NProgress.start();
-        commit("SET_LOADING", true);
-        try {
-          let res = await $request.get(
-            `account/trades?page=1&pageSize=20`
-          );
-          console.log(res);
-          let responsePayload = res.data.data;
-          commit("SET_ADS_DATA", responsePayload);
-          return res;
-        } catch (error) {
-          console.log(error);
-          toastify({
-            text: `Internal connection error`,
-            className: "info",
-            style: {
-              background: "red",
-              fontSize: "12px",
-              borderRadius: "5px",
-            },
-          }).showToast();
-          commit("SET_ERROR", "Internal connection error");
-          return error;
-        } finally {
-          NProgress.done();
-        }
-      },
-
-    // View Single Transaction
-    async view({ commit }, id) {
+    async makeDeposit({ commit }, payload) {
       NProgress.start();
       commit("SET_LOADING", true);
       try {
-        let res = await $request.get(`admin/withdrawals/${id}`);
-        console.log(res);
-        let responsePayload = res.data;
-        commit("SET_SINGLE_DATA", responsePayload);
+        let res = await $request.post(`account/deposit`, payload.formData);
+        console.log(res.data)
+        router.push(`/success?type=${payload.type}&amount=${payload.amount}`)
         return res;
       } catch (error) {
         console.log(error);
@@ -165,22 +134,21 @@ export default {
             borderRadius: "5px",
           },
         }).showToast();
-        commit("SET_LOADING", false);
-        // commit("SET_SINGLE_ERROR", "Internal connection error");
+        commit("SET_ERROR", error.data.message);
         return error;
       } finally {
         NProgress.done();
       }
     },
 
-    async updateStatus({ commit, dispatch }, payload) {
+    // Request Withdrawal
+    async requestWithdrawal({ commit }, payload) {
       NProgress.start();
       commit("SET_LOADING", true);
       try {
-        let res = await $request.put(`admin/withdrawals/${payload.id}/${payload.operation}`);
-        console.log(res.data);
-        dispatch("list", payload.page)
-        dispatch("view", payload.id)
+        let res = await $request.post(`account/request-withdrawal`, payload.dataObj);
+        console.log(res.data)
+        router.push(`/success?type=${payload.type}&amount=${payload.amount}`)
         return res;
       } catch (error) {
         console.log(error);
@@ -193,7 +161,7 @@ export default {
             borderRadius: "5px",
           },
         }).showToast();
-        commit("SET_ERROR", "Internal connection error");
+        commit("SET_ERROR", error.data.message);
         return error;
       } finally {
         NProgress.done();

@@ -6,7 +6,7 @@
           ><img src="@/assets/img/logo.svg" width="45" alt=""
         /></router-link>
         <div class="d-flex align-items-center" style="gap: 20px">
-          <!-- <button class="outline-btn web-menu" @click="getStarted">get started</button> -->
+          <button class="outline-btn web-menu" @click="getStarted">get started</button>
           <a
             href="https://play.google.com/store/apps/details?id=com.mings.pi2p&pli=1"
             target="_blank"
@@ -36,4 +36,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+
+</style>

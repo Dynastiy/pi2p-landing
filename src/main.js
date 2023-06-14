@@ -14,6 +14,10 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.use(ElementUI);
 
+import bottomNavigationVue from "bottom-navigation-vue";
+
+Vue.use(bottomNavigationVue);
+
 // import CountryFlag from "vue-country-flag";
 // Vue.component("country-flag", CountryFlag);
 

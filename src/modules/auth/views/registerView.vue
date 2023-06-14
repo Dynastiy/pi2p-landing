@@ -6,7 +6,7 @@
       </div>
 
       <div>
-        <h6 class="text-uppercase text-center my-3 font-weight-bold">
+        <h6 class="text-uppercase text-center my-3"  style="font-weight: 700;">
           create new account
         </h6>
 
@@ -88,7 +88,7 @@
               >Already have an account?
               <span
                 role="button"
-                style="color: var(--primary-500)"
+                style="color: var(--primary-500);  font-weight: 700;"
                 @click="$emit('goToLogin', 'login')"
                 >Login</span
               ></small

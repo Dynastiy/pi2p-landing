@@ -1,30 +1,25 @@
 <template>
-  <div id="wallet">
+  <div>
+    <div v-if="loading" class="text-center">
+      <i-icon icon="eos-icons:bubble-loading" width="40px" />
+    </div>
+    <div id="wallet" v-else>
    <div>
     <h6>Wallet Balance</h6>
-    <div class="d-flex align-items-start justify-content-between">
+    <div class="d-flex align-items-start justify-content-between mt-1">
       <div>
-        <h1>
+        <h2>
           {{
             viewAmount
-              ? currency === "NGN"
-                ? NGNBalance.balanceFormatted
-                : PIBalance.balanceFormatted
+              ?
+                 NGNBalance[1].balanceFormatted
+                
               : "*******"
           }}
-        </h1>
-        <small class="amount-preview"
-      >{{
-        viewAmount
-          ? currency === "NGN"
-            ? PIBalance.balanceFormatted
-            : NGNBalance.balanceFormatted
-          : "*****"
-      }}
-    </small>
+        </h2>
       </div>
       <div class="text-right">
-        <div class="mb-4">
+        <div class="">
           <span role="button" @click="viewAmount = !viewAmount">
             <i-icon
               :icon="viewAmount ? 'mdi:eye-off-outline' : 'mdi:eye-outline'"
@@ -32,17 +27,7 @@
             />
           </span>
         </div>
-        <el-dropdown trigger="click">
-          <span class="el-dropdown-link select-currency">
-            <!-- {{ currency === "NGN" ? "NGN" : "PI"}} -->
-            Currency 
-            <i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><span @click="switchCurrency('NGN')">NGN</span></el-dropdown-item>
-            <el-dropdown-item><span @click="switchCurrency('PI')">PI</span></el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+        
         <!-- <span
           role="button"
           @click="switchCurrency(currency === 'NGN' ? 'PI' : 'NGN')"
@@ -53,39 +38,26 @@
     </div>
    </div>
 
-    <div class="wallet-actions">
-      <div role="button">
+    <div class="wallet-actions d-flex justify-content-end">
+      <router-link to="/deposit">
+        <div>
         <span>
-          <i-icon icon="vaadin:money-deposit" />
+          <i-icon icon="mdi:plus-circle" />
         </span>
         <span class="label">Deposit</span>
       </div>
-      <div role="button">
-        <span>
-          <i-icon icon="uil:money-withdrawal" />
-        </span>
-        <span class="label">Withdraw</span>
-      </div>
+      </router-link>
     </div>
-
-    <!-- Wallet Actions  -->
-    <!-- Deposit -->
-    <div>
-      <DepositFunds/>
-    </div>
-    <!-- Withdrawal -->
-    <div>
-
-    </div>
+  </div>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import DepositFunds from "../modals/DepositFunds.vue";
+// import DepositFunds from "../modals/DepositFunds.vue";
 
 export default {
-  components: { DepositFunds }, 
+  // components: { DepositFunds }, 
   data() {
     return {
       currency: "NGN",
@@ -100,11 +72,93 @@ export default {
   beforeMount() {},
   computed: {
     ...mapState("wallet", {
-      NGNBalance: (state) => state.balancesDataSet[0],
-      PIBalance: (state) => state.balancesDataSet[1],
+      loading: (state) => state.loading,
+      NGNBalance: (state) => state.balancesDataSet,
+      PIBalance: (state) => state.balancesDataSet[0],
     }),
   },
 };
 </script>
 
-<style></style>
+<style scoped >
+#wallet {
+    /* background: url("../img/div.jpg"); */
+    background-color: var(--primary-800);
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    min-height: 200px;
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#wallet h6 {
+    color: var(--primary-50);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#wallet .amount-preview {
+    color: var(--primary-50);
+}
+
+#wallet h2 {
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--white);
+}
+
+#wallet .select-currency {
+    background-color: var(--white);
+    color: var(--primary-500);
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+#wallet .currency-dropdown li{
+    list-style: none;
+}
+
+#wallet .wallet-actions {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    gap: 10px;
+}
+
+#wallet .wallet-actions span.label {
+    font-size: 14px;
+}
+
+#wallet .wallet-actions div {
+    display: flex;
+    display: inline-flex;
+    display: -webkit-flex;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+
+#wallet .wallet-actions div {
+    background-color: var(--white);
+    color: var(--primary-700);
+    font-weight: 500;
+}
+@media (max-width:990px) {
+  #wallet h2 {
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--white);
+}
+}
+</style>
