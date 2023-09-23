@@ -2,7 +2,7 @@ import IndexView from "../views/IndexView.vue";
 
 const router = [
   {
-    path: "/orders",
+    path: "/all-orders",
     name: "orders",
     component: IndexView,
     meta: {

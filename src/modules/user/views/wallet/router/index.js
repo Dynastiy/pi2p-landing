@@ -14,7 +14,7 @@ const router = [
       }
     },
     {
-      path: '/deposit',
+      path: '/this-deposit',
       name: 'deposit',
       component: DepositFunds,
       meta: {

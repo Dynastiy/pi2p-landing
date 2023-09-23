@@ -12,7 +12,7 @@ const router = [
     },
 
     {
-      path: '/transactions',
+      path: '/all-transactions',
       name: 'transactions',
       component: Transactions,
       meta: {

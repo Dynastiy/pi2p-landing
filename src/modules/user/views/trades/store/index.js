@@ -182,7 +182,7 @@ export default {
       commit("SET_EVENT_LOADING", true);
       try {
         let res = await $request.post(
-          `account/trades/${payload.id}/orders`,
+          `account/trades/${payload.id}/buy`,
           payload.data
         );
         console.log(res.data);

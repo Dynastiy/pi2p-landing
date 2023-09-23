@@ -22,7 +22,7 @@ const router = [
       }
     },
     {
-      path: '/trades',
+      path: '/all-trades',
       name: 'trades',
       component: Trades,
       meta: {

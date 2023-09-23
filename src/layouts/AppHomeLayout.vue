@@ -1,55 +1,50 @@
 <template>
   <div>
-    <AppHeader />
-    <slot />
-    <AppFooter />
-
-    <!-- Auth Modals  -->
-    <div class="auth">
-      <el-dialog
-        :visible.sync="dialogVisible"
-        :close-on-click-modal="false"
-        class="container"
-        :show-close="false"
-      >
-        <LoginView @goToRegister="switchForm" v-if="operation === 'login'"/>
-        <RegisterView @goToLogin="switchForm"  v-if="operation === 'register'"/>
-      </el-dialog>
+    <app-nav class="tw-sticky tw-top-0 lg:tw-px-44 md:tw-px-32 tw-px-6 tw-z-10" @toggleDrawer="toggleDrawer"/>
+    
+    <div class="lg:tw-px-44 md:tw-px-32 tw-px-6">
+      <slot />
     </div>
+
+    <mobile-nav @close="toggleDrawer" :drawer="drawer"/>
+
+    <AppFooter />
   </div>
 </template>
 
 <script>
-import AppHeader from "@/components/static/AppHeader.vue";
+import AppNav from "@/components/static/AppNav.vue";
 import AppFooter from "@/components/static/AppFooter.vue";
-import LoginView from '@/modules/auth/views/loginView.vue';
-import RegisterView from '@/modules/auth/views/registerView.vue';
 
 import { mapState } from "vuex";
+import MobileNav from '@/components/static/MobileNav.vue';
 
 export default {
   name: "AppHomeLayout",
 
-  components: { AppHeader, AppFooter, LoginView, RegisterView },
+  components: { AppNav, AppFooter, MobileNav},
   data() {
     return {
-      operation: "login"
+      drawer: false
     };
   },
   methods: {
     switchForm(value) {
-      this.operation = value
+      this.operation = value;
       console.log(value);
-    }
+    },
+
+    toggleDrawer(){
+      this.drawer = !this.drawer
+    },
   },
   mounted() {
-      this.$store.commit("modals/REMOVE_MODAL");
+    this.$store.commit("modals/REMOVE_MODAL");
   },
   computed: {
     ...mapState("modals", {
-      dialogVisible: (state) => state.openAuthModal
+      dialogVisible: (state) => state.openAuthModal,
     }),
-   
   },
 };
 </script>

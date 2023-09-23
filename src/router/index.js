@@ -1,17 +1,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// Modules
-import HomeRoutes from "@/modules/landing/router";
-import WalletRoutes from "@/modules/user/views/wallet/router";
-import KYC from "@/modules/user/views/kyc/router";
-import Trades from "@/modules/user/views/trades/router";
-import Profile from "@/modules/user/views/profile/router";
-import Transactions from "@/modules/user/views/transactions/router";
-import Orders from "@/modules/user/views/orders/router";
 
-// Success Page
-import SuccessPage from "@/modules/user/components/modals/EventSuccess";
+// Success Pages
+import SuccessPage from "@/components/utils/EventSuccess";
+import UtilitiesSuccess from "@/components/utils/SuccessCard"
+
+// New Route Modules
+import TradeRoutes from "./modules/trades";
+import AuthRoutes from "./modules/auth";
+import TransactionRoutes from "./modules/transactions";
+import DashboardRoutes from "./modules/dashboard";
+import Utilities from "./modules/utilities";
+import HomeRoutes from "./modules/home"
 
 Vue.use(VueRouter);
 
@@ -25,19 +26,27 @@ const routes = [
       layout: "DashboardLayout",
     },
   },
+
+  {
+    path: "/utilities-success",
+    component: UtilitiesSuccess,
+    name: "utilities-success",
+    meta: {
+      layout: "DashboardLayout",
+    },
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes: routes.concat(
+    DashboardRoutes,
     HomeRoutes,
-    WalletRoutes,
-    KYC,
-    Trades,
-    Profile,
-    Transactions,
-    Orders
+    TradeRoutes,
+    AuthRoutes,
+    TransactionRoutes,
+    Utilities
   ),
 });
 

@@ -3,9 +3,11 @@ import Vuex from "vuex";
 
 // Modules
 import modals from "./modals";
+import drawer from "./drawer"
+import wallet from "./modules/wallet"
+import auth from "./modules/auth";
 
-import auth from "@/modules/auth/store/index";
-import wallet from "@/modules/user/views/wallet/store/index"
+// import wallet from "@/modules/user/views/wallet/store/index"
 import kyc from "@/modules/user/views/kyc/store/index"
 import trades from "@/modules/user/views/trades/store/index"
 import profile from "@/modules/user/views/profile/store/index"
@@ -28,6 +30,7 @@ export default new Vuex.Store({
   modules: {
     modals,
     config,
+    drawer,
 
     
     auth,

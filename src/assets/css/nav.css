@@ -1,158 +1,101 @@
-/* APP DRAWER  */
-#app-drawer {
-    width: 280px;
-    background-color: var(--primary-700);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    /* left: 0; */
-    overflow-y: auto;
-    transition: all 0.5s;
-}
-
-/* When Menu is collapsed */
-#app-drawer.collapsible {
-    width: 100px;
-    transition: all 0.5s;
-}
-
-#app-drawer.collapsible ul li .menu-item-link .menu-title {
-  display: none;
-    transition: all 0.5s;
-}
-
-#app-drawer.collapsible ul li .sub-menu .sub-menu-items .sub-menu-title {
-    display: none;
-      transition: all 0.5s;
+#app-drawer li {
+    list-style: none;
   }
-
+  
+  /* When Menu is collapsed */
+  #app-drawer.collapsible {
+    width: 120px;
+    transition: all 0.5s;
+  }
+  
+  #app-drawer.collapsible ul li .menu-item-link .menu-title {
+    display: none;
+    transition: all 0.5s;
+  }
+  
+  #app-drawer.collapsible ul li .sub-menu .sub-menu-items .sub-menu-title {
+    display: none;
+    transition: all 0.5s;
+  }
+  
   #app-drawer.collapsible ul li .menu-item-link .menu-title-header {
     font-size: 11px;
   }
-
-  #app-drawer.collapsible ul li .menu-item-link, #app-drawer ul li .menu-icon {
+  
+  #app-drawer.collapsible ul li .menu-item-link,
+  #app-drawer ul li .menu-icon {
     padding: 1rem 1.3rem;
-}
-
-#app-drawer ul li .menu-item-link, #app-drawer ul li .menu-icon {
-    color: var(--white-50);
-    font-weight: 500;
-    display: flex;
-    display: inline-flex;
-    display: -webkit-flex;
-    gap: 10px;
-    font-size: 14px;
-    padding: 1rem 1.8rem;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#app-drawer ul li .menu-item-link.active-link {
-    background-color: var(--primary-50);
-    color: var(--gray-800);
-    border-radius: 8px;
-}
-
-#app-drawer ul li .menu-item-link .menu-item-icon, #app-drawer ul li .sub-menu .sub-menu-items .menu-item-icon {
-    font-size: 20px;
-}
-
-#app-drawer.collapsible ul li .sub-menu .sub-menu-items {
-    padding: 1em 0 1em 3.8rem;
-}
-
-#app-drawer ul li .sub-menu .sub-menu-items {
-    color: var(--white-50);
-    display: block;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 1.3em 0 1em 4rem;
-}
-
-
-#app-drawer ul li .sub-menu .sub-menu-items.active-sub-menu {
-   background-color: var(--primary-200);
-   color: var(--gray-800);
-}
-#app-drawer ul li .sub-menu  {
-    /* background-color: var(--primary-200); */
-}
-
-/* APP HEADER  */
-#app-header {
-    /* box-shadow: var(--elevation-10) ; */
-    /* background: var(--white-50); */
-}
-
-.app-header-content {
-    display: flex;
-    display: inline-flex;
-    display: -webkit-flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-icon {
-    font-size: 23px;
-}
-
-.user-name {
-    font-size: 15.6px;
-    font-weight: 400;
-}
-
-.user-menu-actions {
-    display: flex;
-    display: inline-flex;
-    display: -webkit-flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.header-image {
-    width: 35px;
-    height: 35px;
-    object-fit: cover;
-    -o-object-fit: cover;
-    object-position: center;
-    -o-object-position: center;
-    border-radius: 50%;
-}
-
-/* FOOTER  */
-li.menu-item {
-list-style: none;
-}
-
-.menu-item {
-    background-color: var(--primary-50);
-    padding: 14px 25px;
-    border-radius: 30px;
+  }
+  
+  #app-drawer ul li .menu-item-link {
+    color: var(--dark);
     font-weight: 600;
-    font-size: 14px;
-}
-
-.menu-item a {
-    color: var(--dark-color);
-}
-
-.social-links  {
-    margin-top:20px ;
     display: flex;
     display: inline-flex;
     display: -webkit-flex;
-    justify-content: center;
-    gap:20px   
-}
-
-.social-links a .fa{
-    color: #6B7280;
-    font-size: 20px;
-}
-
-/* MOBILE MENU */
-.mobile-menu-icon {
-    display: none;
-}
-
-
+    gap: 10px;
+    font-size: 13px;
+    padding: 10px 12px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+  }
+  
+  #app-drawer ul li .menu-item-link:hover {
+    background-color: var(--primary-300);
+    color: var(--gray-100);
+    transition: all 0.3s;
+  }
+  
+  #app-drawer .menu-icon {
+    background-color: var(--white-50);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+  }
+  
+  #app-drawer ul li .menu-item-link.active-link {
+    background-color: var(--primary-50);
+    color: var(--primary-500);
+    font-weight: 600;
+  }
+  
+  #app-drawer ul li .menu-item-link .menu-item-icon,
+  #app-drawer ul li .sub-menu .sub-menu-items .menu-item-icon {
+    font-size: 30px;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    padding: 4px;
+    border-radius: 50%;
+  }
+  
+  #app-drawer.collapsible ul li .sub-menu .sub-menu-items {
+    padding: 1em 0 1em 1.8rem;
+  }  
+  #app-drawer ul li .sub-menu .sub-menu-items {
+    color: var(--dark-500);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 0em 0 0em 2.3rem;
+  }
+  
+  #app-drawer ul li .sub-menu .sub-menu-items:hover {
+    color: var(--primary-400);
+  }
+  
+  #app-drawer ul li .sub-menu .sub-menu-items.active-sub-menu {
+    /* background-color: var(--primary-color); */
+    color: var(--primary-500);
+    font-weight: 700;
+  }
+  
+  .sub-menu {
+    height: 0;
+    overflow-y: hidden;
+    transition: all 3s;
+  }
+  .sub-menu-open {
+    height: auto;
+    transition: all 3s;
+  }

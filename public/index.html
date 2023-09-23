@@ -13,17 +13,47 @@
     <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
 
     <!-- <script src="https://sdk.minepi.com/pi-sdk.js"></script> -->
-    <script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>
+    <!-- <script src="https://downloads.minepi.com/sdk/v1/prod.js"></script> -->
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    <script> Pi.init({ version: "2.0", sandbox: true }) </script>
     
- 
     <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
     <title>Pie2P</title>
+
+    <style>
+      
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .pre-loader img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .pre-loader {
+        display: grid;
+        display: -moz-grid;
+        display: -ms-grid;
+        height: 100vh;
+        place-items: center;
+      }
+    </style>
   </head>
+
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <div id="loading__container" class="pre-loader">
+        <div class="" style="text-align: center;">
+          <img src="/logo.svg" alt="">
+          <h4 class="" style="margin-bottom: 0; font-weight: bold;">Welcome to Pie2P</h4>
+          <p style="font-size: 12px;"> <i>Trading Pi has never been easier...</i></p>
+        </div>
+     </div>
+    </div>
     <!-- built files will be auto injected -->
 
     <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
@@ -33,7 +63,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    
-     <!-- <script> Pi.init({ version: "2.0", sandbox: true }) -->
+     
      </script>
   </body>
 </html>

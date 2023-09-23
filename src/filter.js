@@ -16,6 +16,14 @@ const timeStamp2 = (value) => {
   }
 };
 
+const formatDate = (value) => {
+  if (value) {
+    // return moment(String(value)).format();
+    let date = new Date(value);
+    return moment(String(date)).format("MMM DD, YYYY hh:mm");
+  }
+};
+
 const colorSplit = (value) => {
   // if (value) {
   //     return (String(value)).split(" ").join();
@@ -42,15 +50,15 @@ const formatAmount = (value) => {
 };
 
 const createRef = (value) => {
-  return !value ? "0" : value.split("-").join("").slice(0, 3);
+  return !value ? "0" : value.split("-").join("").slice(0, 8);
 };
 
 const dollarFilter2 = (value) => {
   if (!value) {
-    return "$ 0";
+    return "0";
   }
 
-  return numeral(value).format("($ 0.00a)");
+  return numeral(value).format("(0.00a)");
 };
 
 const numberFilter = (value) => {
@@ -94,4 +102,5 @@ export {
   colorSplit,
   formatAmount,
   numberFilter,
+  formatDate
 };

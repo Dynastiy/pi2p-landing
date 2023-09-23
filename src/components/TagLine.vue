@@ -1,11 +1,11 @@
 <template>
-  <div class="container mt-5">
+  <div class="tw-mt-5">
     <div id="tag-line" class="">
       <div class="text-center">
         <h1 class="header-font text-white">Buy. Sell. Trade</h1>
-        <p class="text-white">Your Portal to endless possibilities</p>
+        <p class="text-white">Your Portal to endless possibilities...</p>
         <div
-          class="mt-3 d-flex align-items-center justify-content-center"
+          class="mt-3 tw-flex tw-items-center tw-justify-center"
           style="gap: 20px"
         >
           <button class="tertiary-btn" @click="getStarted">get started</button>
@@ -30,7 +30,7 @@ export default {
   methods: {
     ...mapActions("modals", ["setOpenState"]),
     getStarted() {
-      this.setOpenState();
+      this.$router.push('/register');
     },
   },
 };

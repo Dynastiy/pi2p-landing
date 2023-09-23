@@ -1,5 +1,5 @@
 <template>
-  <div id="privacy-policy" class="container mt-3">
+  <div id="privacy-policy" class="mt-3">
     <h1 class="header-font">PI2P Privacy Policy</h1>
     <hr />
     <!-- <p style="text-align: center"><strong>PI2P PRIVACY POLICY</strong></p> -->
