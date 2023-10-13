@@ -13,6 +13,7 @@ const getDefaultState = () => {
     adsDataSet: null,
     metaSet: null,
     singleDataSet: null,
+    settingsData: "",
   };
 };
 
@@ -63,18 +64,22 @@ export default {
     },
 
     SET_ADS_DATA(state, payload) {
-        state.adsDataSet = payload;
-        state.metaSet = payload.meta;
-        state.loading = false;
-        state.error = false;
-        state.success = false;
-      },
+      state.adsDataSet = payload;
+      state.metaSet = payload.meta;
+      state.loading = false;
+      state.error = false;
+      state.success = false;
+    },
 
     SET_SINGLE_DATA(state, payload) {
       state.singleDataSet = payload;
       state.loading = false;
       state.singleError = false;
       state.singleSuccess = true;
+    },
+
+    SET_SETTINGS(state, payload) {
+      state.settingsData = payload;
     },
 
     REMOVE_SINGLE_DATA(state) {
@@ -90,9 +95,7 @@ export default {
       NProgress.start();
       commit("SET_LOADING", true);
       try {
-        let res = await $request.get(
-          `account/balances`
-        );
+        let res = await $request.get(`account/balances`);
         console.log(res);
         let responsePayload = res.data;
         commit("SET_BALANCES_DATA", responsePayload);
@@ -120,8 +123,8 @@ export default {
       commit("SET_LOADING", true);
       try {
         let res = await $request.post(`account/deposit`, payload.formData);
-        console.log(res.data)
-        router.push(`/success?type=${payload.type}&amount=${payload.amount}`)
+        console.log(res.data);
+        router.push(`/success?type=${payload.type}&amount=${payload.amount}`);
         return res;
       } catch (error) {
         console.log(error);
@@ -146,9 +149,14 @@ export default {
       NProgress.start();
       commit("SET_LOADING", true);
       try {
-        let res = await $request.post(`account/request-withdrawal`, payload.dataObj);
-        console.log(res.data)
-        router.push(`/success?type=${payload.type}&currency_amount=${payload.amount}`)
+        let res = await $request.post(
+          `account/request-withdrawal`,
+          payload.dataObj
+        );
+        console.log(res.data);
+        router.push(
+          `/success?type=${payload.type}&currency_amount=${payload.amount}`
+        );
         return res;
       } catch (error) {
         console.log(error);
@@ -166,6 +174,17 @@ export default {
       } finally {
         NProgress.done();
       }
+    },
+
+    async getSettings({ commit }) {
+      $request
+        .get(`settings`)
+        .then((res) => {
+          commit("SET_SETTINGS", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

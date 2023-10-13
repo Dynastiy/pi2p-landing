@@ -191,7 +191,6 @@ export default {
       loading: false,
       busy: false,
       active: null,
-      piRate: "200",
       isLoading: false,
     };
   },
@@ -305,6 +304,7 @@ export default {
   computed: {
     ...mapState("wallet", {
       walletBalance: (state) => state.balancesDataSet[0],
+      settingsData: (state) => state.settingsData
     }),
 
     piAmount() {
@@ -312,18 +312,11 @@ export default {
       return value || 0;
     },
 
-    // amount() {
-    //   var value;
-    //   if (
-    //     this.variationCode === undefined ||
-    //     Object.keys(this.variationCode).length === 0
-    //   ) {
-    //     value = 0;
-    //   } else {
-    //     value = this.variationCode.variation_amount;
-    //   }
-    //   return value;
-    // },
+    piRate(){
+      var rate = this.settingsData.find(item => item.name === "PI_RATE")
+      console.log(rate, "kkk");
+      return rate.value
+    }
   },
 };
 </script>

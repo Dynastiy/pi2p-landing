@@ -21,6 +21,7 @@
 import AppDrawer from "@/components/static/AppDrawer.vue";
 import DashboardHeader from "@/components/static/DashboardHeader.vue";
 import MobileDrawer from '@/components/static/MobileDrawer.vue';
+import { mapActions } from 'vuex';
 export default {
   name: "DashboardLayout",
   components: { AppDrawer, DashboardHeader, MobileDrawer },
@@ -171,6 +172,7 @@ export default {
   }),
 
   methods: {
+    ...mapActions("wallet", ["balances", "getSettings"]),
     toggleDrawer(){
       this.drawer = !this.drawer
     },
@@ -187,6 +189,8 @@ export default {
 
   beforeMount(){
     this.getUser()
+    this.balances()
+    this.getSettings()
   },
 
   computed: {},

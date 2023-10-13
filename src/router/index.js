@@ -13,6 +13,7 @@ import TransactionRoutes from "./modules/transactions";
 import DashboardRoutes from "./modules/dashboard";
 import Utilities from "./modules/utilities";
 import HomeRoutes from "./modules/home"
+import KYC from "@/modules/user/views/kyc/router"
 
 Vue.use(VueRouter);
 
@@ -46,7 +47,8 @@ const router = new VueRouter({
     TradeRoutes,
     AuthRoutes,
     TransactionRoutes,
-    Utilities
+    Utilities,
+    KYC
   ),
 });
 

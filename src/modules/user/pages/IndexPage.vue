@@ -9,7 +9,7 @@
 
 <script>
 import UserWallet from "@/components/utils/UserWallet.vue";
-import { mapActions } from "vuex";
+// import { mapActions } from "vuex";
 import DashboardHomeHistory from '@/components/dashboard/DashboardHomeHistory.vue';
 export default {
   components: { UserWallet, DashboardHomeHistory },
@@ -19,11 +19,12 @@ export default {
     };
   },
   methods: {
-    ...mapActions("wallet", ["balances"]),
+    
   },
 
   beforeMount() {
-    this.balances();
+    // this.balances();
+    // this.getSettings()
   },
 };
 </script>

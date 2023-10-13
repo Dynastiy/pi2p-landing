@@ -1,111 +1,107 @@
 <template>
-  <div class="auth-content">
-    <div>
-      <div class="tw-mb-8 ">
-        <img
-          src="@/assets/img/logo.svg"
-          class="tw-h-12 tw-w-12"
-          alt=""
-        />
-        <h5 class="tw-font-bold tw-text-2xl tw-mb-0">Welcome back,</h5>
-        <small class="tw-text-light tw-text-xs">Sign in to continue to Pi2P</small>
-      </div>
-      <validation-observer v-slot="{ invalid, handleSubmit }">
-        <form @submit.prevent="handleSubmit(onSubmit)">
-          <span v-if="error" class="tw-mb-3 error-alert">{{ error }}</span>
+  <div class="">
+    <div class="tw-mb-8">
+      <img src="@/assets/img/logo.svg" class="tw-h-12 tw-w-12" alt="" />
+      <h5 class="tw-font-bold tw-text-2xl tw-mb-0">Welcome back,</h5>
+      <small class="tw-text-light tw-text-xs"
+        >Sign in to continue to Pi2P</small
+      >
+    </div>
+    <validation-observer v-slot="{ invalid, handleSubmit }">
+      <form @submit.prevent="handleSubmit(onSubmit)">
+        <span v-if="error" class="tw-mb-3 error-alert">{{ error }}</span>
 
-          <validation-provider
-            name="email"
-            rules="required|email"
-            v-slot="{ dirty, valid, invalid, errors }"
-          >
-            <div class="field">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                v-model="credentials.email"
-                placeholder="xxxx@xx.xxx"
-                v-bind:class="{
-                  'tw-text-success': dirty && valid,
-                  'tw-text-danger': dirty && invalid,
-                }"
-              />
-              <span
-                class="email-iccon"
-                role="button"
-                @click="typePassword = !typePassword"
-              >
-                <i-icon icon="fluent:mail-24-regular" class="form-icon" />
-              </span>
-              <span class="invalid-feedback d-inline-block" v-show="errors">{{
-                errors[0]
-              }}</span>
-              <label for="email">User Email</label>
-            </div>
-          </validation-provider>
-
-          <validation-provider
-            class="tw-mt-4"
-            name="password"
-            rules="required"
-            v-slot="{ dirty, valid, invalid, errors }"
-          >
-            <div class="field">
-              <input
-                :type="typePassword ? 'password' : 'text'"
-                name="password"
-                id="password"
-                v-model="credentials.password"
-                v-bind:class="{
-                  'tw-text-success': dirty && valid,
-                  'tw-text-danger': dirty && invalid,
-                }"
-                placeholder="Password"
-              />
-              <span
-                class="password-iccon"
-                role="button"
-                @click="typePassword = !typePassword"
-              >
-                <i-icon
-                  :icon="typePassword ? 'tabler:eye' : 'gridicons:not-visible'"
-                  class="form-icon"
-                />
-              </span>
-              <span class="invalid-feedback d-inline-block" v-show="errors">{{
-                errors[0]
-              }}</span>
-              <label for="password">Password</label>
-            </div>
-          </validation-provider>
-
-          <div class="tw-mt-8">
-            <button
-              class="primary-btn w-100 tw-py-4"
-              v-bind:disabled="invalid"
-              :class="{ 'tw-bg-gray4': invalid }"
+        <validation-provider
+          name="email"
+          rules="required|email"
+          v-slot="{ dirty, valid, invalid, errors }"
+        >
+          <div class="field">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              v-model="credentials.email"
+              placeholder="xxxx@xx.xxx"
+              v-bind:class="{
+                'tw-text-success': dirty && valid,
+                'tw-text-danger': dirty && invalid,
+              }"
+            />
+            <span
+              class="email-iccon"
+              role="button"
+              @click="typePassword = !typePassword"
             >
-              <span>Login</span>
-            </button>
+              <i-icon icon="fluent:mail-24-regular" class="form-icon" />
+            </span>
+            <span class="invalid-feedback d-inline-block" v-show="errors">{{
+              errors[0]
+            }}</span>
+            <label for="email">User Email</label>
           </div>
-        </form>
-      </validation-observer>
-      <div class="tw-text-center tw-mt-3">
-        <span class="tw-text-sm tw-font-semibold"
-          >Don't have an account?
-          <router-link to="/register" class="tw-text-primary500"
-            >Sign Up</router-link
+        </validation-provider>
+
+        <validation-provider
+          class="tw-mt-4"
+          name="password"
+          rules="required"
+          v-slot="{ dirty, valid, invalid, errors }"
+        >
+          <div class="field">
+            <input
+              :type="typePassword ? 'password' : 'text'"
+              name="password"
+              id="password"
+              v-model="credentials.password"
+              v-bind:class="{
+                'tw-text-success': dirty && valid,
+                'tw-text-danger': dirty && invalid,
+              }"
+              placeholder="Password"
+            />
+            <span
+              class="password-iccon"
+              role="button"
+              @click="typePassword = !typePassword"
+            >
+              <i-icon
+                :icon="typePassword ? 'tabler:eye' : 'gridicons:not-visible'"
+                class="form-icon"
+              />
+            </span>
+            <span class="invalid-feedback d-inline-block" v-show="errors">{{
+              errors[0]
+            }}</span>
+            <label for="password">Password</label>
+          </div>
+        </validation-provider>
+
+        <div class="tw-mt-8">
+          <button
+            class="primary-btn w-100 tw-py-4"
+            v-bind:disabled="invalid"
+            :class="{ 'tw-bg-gray4': invalid }"
           >
-        </span>
-      </div>
-      <div class="tw-text-center tw-mt-1">
-        <span class="tw-text-sm tw-font-semibold">
-          <router-link to="/" class="tw-text-primary500"
-            >Go to Homepage</router-link
-          >
-        </span>
-      </div>
+            <span>Login</span>
+          </button>
+        </div>
+      </form>
+    </validation-observer>
+    <div class="tw-text-center tw-mt-3">
+      <span class="tw-text-sm tw-font-semibold"
+        >Don't have an account?
+        <router-link to="/register" class="tw-text-primary500"
+          >Sign Up</router-link
+        >
+      </span>
+    </div>
+    <div class="tw-text-center tw-mt-1">
+      <span class="tw-text-sm tw-font-semibold">
+        <router-link to="/" class="tw-text-primary500"
+          >Go to Homepage</router-link
+        >
+      </span>
     </div>
   </div>
 </template>
@@ -130,10 +126,10 @@ export default {
 
     onSubmit() {
       let credentials = {
-          email: this.credentials.email,
-          password: this.credentials.password,
-        };
-        this.loginUser(credentials)
+        email: this.credentials.email,
+        password: this.credentials.password,
+      };
+      this.loginUser(credentials);
     },
   },
 
@@ -141,8 +137,7 @@ export default {
     this.$store.commit("auth/REMOVE_ERROR_SUCCESS");
   },
 
-  watch: {
-  },
+  watch: {},
 
   computed: {
     ...mapState("auth", {

@@ -147,7 +147,7 @@ export default {
       loading: false,
       busy: false,
       active: null,
-      piRate: "200",
+      settings: []
     };
   },
 
@@ -225,12 +225,19 @@ export default {
   computed: {
     ...mapState("wallet", {
       walletBalance: (state) => state.balancesDataSet[0],
+      settingsData: (state) => state.settingsData
     }),
 
     piAmount() {
       let value = this.amount / this.piRate;
       return value || 0;
     },
+
+    piRate(){
+      var rate = this.settingsData.find(item => item.name === "PI_RATE")
+      console.log(rate, "kkk");
+      return rate.value
+    }
   },
 };
 </script>
