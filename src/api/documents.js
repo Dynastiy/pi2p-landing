@@ -14,6 +14,10 @@ const docs = [
     {
         id: 4,
         name: "NIN",
+    },
+    {
+        id: 5,
+        name: "Other Legal Documents",
     }
 ]
 

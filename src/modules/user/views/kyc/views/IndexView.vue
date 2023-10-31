@@ -1,7 +1,7 @@
 <template>
-  <div class="container kyc">
+  <div class="container kyc tw-mt-5">
     <h4>Submit KYC</h4>
-    <form @submit.prevent="completeKYC" class="mt-3">
+    <form @submit.prevent="completeKYC" class="tw-mt-3 tw-p-3">
       <span v-if="error" class="mb-3 error-alert">{{ error }}</span>
       <div class="mb-3">
         <label for="">Full Legal Name</label>
@@ -92,4 +92,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+  input, select {
+    padding: 8px;
+  }
+
+  label{
+    font-size: 13px
+  }
+</style>

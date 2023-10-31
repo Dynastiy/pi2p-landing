@@ -25,8 +25,8 @@ export default {
   },
 
   mutations: {
-    SET_LOADING(state) {
-      state.loading = true;
+    SET_LOADING(state, payload) {
+      state.loading = payload;
       state.error = false;
       state.success = false;
       //   state.dataSet = null;
@@ -107,6 +107,7 @@ export default {
           },
         }).showToast();
         commit("SET_ERROR", error.data.message);
+        commit("SET_LOADING", false);
         return error;
       } finally {
         NProgress.done();
