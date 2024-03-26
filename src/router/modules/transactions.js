@@ -10,6 +10,7 @@ const router = [
     component: Transactions,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "transactions",
       name: "transactions",
     },
@@ -21,6 +22,7 @@ const router = [
     component: Withdrawal,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "transactions",
       name: "withdrawal",
     },
@@ -32,6 +34,7 @@ const router = [
     component: Deposit,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "transactions",
       name: "deposit",
     },

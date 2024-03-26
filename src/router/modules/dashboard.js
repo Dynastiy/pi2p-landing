@@ -9,6 +9,7 @@ const router = [
       layout: "DashboardLayout",
       parent: "dashboard",
       name: "dashboard",
+      requiresAuth: true
     },
   },
 ];

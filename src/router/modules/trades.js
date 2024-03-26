@@ -15,6 +15,7 @@ const router = [
     component: Trades,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "trades",
       name: "trades",
     },
@@ -26,6 +27,7 @@ const router = [
     component: Trade,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "trades",
       name: "trades",
     },
@@ -37,6 +39,7 @@ const router = [
     component: MyTradeID,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "trades",
       name: "trades",
     },
@@ -48,6 +51,7 @@ const router = [
     component: CreateTrade,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "trades",
       name: "trades",
     },
@@ -59,6 +63,7 @@ const router = [
     component: Orders,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "trades",
       name: "orders",
     },
@@ -70,6 +75,7 @@ const router = [
     component: Order,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "trades",
       name: "orders",
     },

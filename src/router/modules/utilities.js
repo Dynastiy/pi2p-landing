@@ -11,6 +11,7 @@ const router = [
     component: Utilities,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "utilities",
       name: "utilities",
     },
@@ -22,6 +23,7 @@ const router = [
     component: AirtimePurchase,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "utilities",
       name: "airtime recharge",
     },
@@ -33,6 +35,7 @@ const router = [
     component: DataSubscription,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "utilities",
       name: "data subscription",
     },
@@ -44,6 +47,7 @@ const router = [
     component: DataSubscription,
     meta: {
       layout: "DashboardLayout",
+      requiresAuth: true,
       parent: "utilities",
       name: "electricity bill",
     },

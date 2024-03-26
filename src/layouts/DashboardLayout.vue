@@ -79,25 +79,25 @@ export default {
         ],
       },
 
-      {
-        id: 3,
-        title: "Payment History",
-        sub_title: "Swap currencies",
-        icon: "fluent:payment-32-regular",
-        url: "/swap",
-        hasChildren: false,
-        parent: "swap",
-      },
+      // {
+      //   id: 3,
+      //   title: "Payment History",
+      //   sub_title: "Swap currencies",
+      //   icon: "fluent:payment-32-regular",
+      //   url: "/swap",
+      //   hasChildren: false,
+      //   parent: "swap",
+      // },
 
-      {
-        id: 4,
-        title: "Utilities",
-        sub_title: "Utilities",
-        icon: "ic:baseline-devices-other",
-        url: "/utilities",
-        hasChildren: false,
-        parent: "utilities",
-      },
+      // {
+      //   id: 4,
+      //   title: "Utilities",
+      //   sub_title: "Utilities",
+      //   icon: "ic:baseline-devices-other",
+      //   url: "/utilities",
+      //   hasChildren: false,
+      //   parent: "utilities",
+      // },
 
       {
         id: 5,

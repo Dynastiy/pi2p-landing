@@ -12,7 +12,8 @@ const router = [
       name: 'home',
       component: HomeView,
       meta: {
-        layout: "AppHomeLayout"
+        layout: "AppHomeLayout",
+        requiresAuth: false
       }
     },
 
@@ -21,7 +22,8 @@ const router = [
         name: 'home',
         component: Contact,
         meta: {
-          layout: "AppHomeLayout"
+          layout: "AppHomeLayout",
+          requiresAuth: false
         }
       },
 
@@ -30,7 +32,8 @@ const router = [
         name: 'home',
         component: HowItWorks,
         meta: {
-          layout: "AppHomeLayout"
+          layout: "AppHomeLayout",
+          requiresAuth: false
         }
       },
 
@@ -39,7 +42,8 @@ const router = [
         name: 'about',
         component: About,
         meta: {
-          layout: "AppHomeLayout"
+          layout: "AppHomeLayout",
+          requiresAuth: false
         }
       },
   
@@ -48,7 +52,8 @@ const router = [
       name: 'privacy-policy',
       component: PrivacyPolicy,
       meta: {
-        layout: "AppHomeLayout"
+        layout: "AppHomeLayout",
+        requiresAuth: false
       }
     },
   
@@ -57,7 +62,8 @@ const router = [
       name: 'faqs',
       component: FAQ,
       meta: {
-        layout: "AppHomeLayout"
+        layout: "AppHomeLayout",
+        requiresAuth: false
       }
     },
   
@@ -66,7 +72,8 @@ const router = [
       name: 'terms-and-conditions',
       component: TermsAndConditions,
       meta: {
-        layout: "AppHomeLayout"
+        layout: "AppHomeLayout",
+        requiresAuth: false
       }
     },
    

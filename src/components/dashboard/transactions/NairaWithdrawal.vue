@@ -92,7 +92,12 @@
           </div>
           <div class="deposit-data">
             <span class="item-header">Charge:</span>
-            <span class="item-content">{{ charge }}</span>
+            <span class="item-content">{{
+              charge.toLocaleString("en-US", {
+                style: "currency",
+                currency: "NGN",
+              })
+            }}</span>
           </div>
         </div>
       </div>
@@ -220,10 +225,7 @@ export default {
 
     charge() {
       let value = this.amount * 0.05;
-      return value.toLocaleString("en-US", {
-        style: "currency",
-        currency: "NGN",
-      });
+      return value;
     },
 
     amountToBePaid() {

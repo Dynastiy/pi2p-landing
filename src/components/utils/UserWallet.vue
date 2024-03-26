@@ -18,7 +18,10 @@
                 class="tw-capitalize tw-text-xs tw-text-medium tw-text-white"
                 >wallet balance</span
               >
-              <h1 class="tw-text-white tw-text-3xl tw-font-bold">
+              <span v-if="loading">
+                <i-icon icon="eos-icons:bubble-loading" class="tw-text-2xl tw-text-white" />
+              </span>
+              <h1 v-else class="tw-text-white tw-text-3xl tw-font-bold">
                 {{ fiatBalance.balanceFormatted }}
               </h1>
             </div>
@@ -98,12 +101,16 @@ export default {
     }),
 
     fiatBalance() {
-      let value = this.balances.find((item) => item.currency === "NGN");
+      if(this.balances !== null) {
+        var value = this.balances.find((item) => item.currency === "NGN");
+      }
       return value;
     },
 
     cryptoBalances() {
-      let value = this.balances.filter((item) => item.currency !== "NGN");
+      if(this.balances !== null) {
+        var value = this.balances.filter((item) => item.currency !== "NGN");
+      }
       return value;
     },
   },

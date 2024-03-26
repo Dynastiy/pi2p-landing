@@ -72,12 +72,12 @@
           </span>
           <span v-else>Click to confirm</span>
         </button>
-        <button
+        <!-- <button
           class="button primary-btn w-100 py-3"
           @click="$router.push('/dashboard')"
         >
           Deposit Directly
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
